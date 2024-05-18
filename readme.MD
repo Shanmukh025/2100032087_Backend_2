@@ -1,6 +1,6 @@
-# Safertek Backend Developer Position
+# Safertek Backend Task
 
-This is the README file for the Safertek Backend Developer position entry exam by *2100032087cseh@gmail.com*. It provides instructions on how to run the Flask application.
+This is the README file for the Safertek Backend Developer Task by *2100032087cseh@gmail.com*.
 
 ## Queries Used
 
