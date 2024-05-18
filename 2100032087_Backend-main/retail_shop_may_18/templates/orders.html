@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-900">
+    <div class="container mx-auto bg-gray-900 min-h-screen grid justify-items-center place-items-center">
+        <div>
+            <h1 class="text-2xl font-bold mb-4 text-gray-50 text-center">Orders</h1>
+            <table class="min-w-96 bg-gray-900 border border-gray-200">
+                <thead>
+                    <tr>
+                        <th
+                            class="px-6 py-3 border-b text-gray-50 border-gray-200 bg-gray-900 text-left text-xs leading-4 font-medium text-gray-300 uppercase tracking-wider">
+                            Order ID
+                        </th>
+                        <th
+                            class="px-6 py-3 border-b text-gray-50 border-gray-200 bg-gray-900 text-left text-xs leading-4 font-medium text-gray-300 uppercase tracking-wider">
+                            Cusotmer Id
+                        </th>
+                        <th
+                            class="px-6 py-3 border-b text-gray-50 border-gray-200 bg-gray-900 text-left text-xs leading-4 font-medium text-gray-300 uppercase tracking-wider">
+                            Order Date
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b text-gray-50 border-gray-200">
+                            {{ order[0] }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b text-gray-50 border-gray-200">
+                            {{ order[1] }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b text-gray-50 border-gray-200">
+                            {{ order[2] }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

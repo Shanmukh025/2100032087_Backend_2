@@ -1,0 +1,37 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "Customers" (
+	"CustomerID"	INTEGER,
+	"FirstName"	TEXT NOT NULL,
+	"LastName"	TEXT NOT NULL,
+	"Email"	TEXT NOT NULL,
+	"DateOfBirth"	DATE NOT NULL,
+	PRIMARY KEY("CustomerID")
+);
+CREATE TABLE IF NOT EXISTS "Products" (
+	"ProductID"	INTEGER,
+	"ProductName"	TEXT NOT NULL,
+	"Price"	REAL NOT NULL,
+	PRIMARY KEY("ProductID")
+);
+CREATE TABLE IF NOT EXISTS "Orders" (
+	"OrderID"	INTEGER,
+	"CustomerID"	INTEGER NOT NULL,
+	"OrderDate"	DATE NOT NULL,
+	FOREIGN KEY("CustomerID") REFERENCES "Customers"("CustomerID"),
+	PRIMARY KEY("OrderID")
+);
+CREATE TABLE IF NOT EXISTS "OrderItems" (
+	"OrderItemID"	INTEGER,
+	"OrderID"	INTEGER NOT NULL,
+	"ProductID"	INTEGER NOT NULL,
+	"Quantity"	INTEGER NOT NULL,
+	FOREIGN KEY("OrderID") REFERENCES "Orders"("OrderID"),
+	FOREIGN KEY("ProductID") REFERENCES "Products"("ProductID"),
+	PRIMARY KEY("OrderItemID")
+);
+INSERT INTO "Customers" VALUES (1,'vinay','ch','chvinay8288@gmail.com','16-12-2002');
+INSERT INTO "Customers" VALUES (2,'John                    ','Doe                 ','john.doe@example.com              ','1985-01-15 ');
+INSERT INTO "Customers" VALUES (3,'Jane','Smith','jane.smith@example.com','1990-06-20');
+INSERT INTO "Orders" VALUES (1,1,'2023-01-10');
+INSERT INTO "Orders" VALUES (2,2,'2023-01-12');
+COMMIT;
