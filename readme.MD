@@ -78,39 +78,3 @@ This is the README file for the Safertek Backend Developer position entry exam b
     GROUP BY Customers.CustomerID
     HAVING TotalSpent > 1000
     ```
-
-## Sample Images
-
-Here are some sample images of working project:
-
-![Sample 1](sample1.png)
-![Sample 2](sample2.png)
-
-## Prerequisites
-
-Before running the application, make sure you have the following installed:
-
--   Python 3.x
--   Flask
-
-## Installation
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/your-username/safertek-backend-exam.git
-    ```
-
-2. Navigate to the project directory:
-
-    ```bash
-    cd retail_shop_may_18
-    ```
-
-## Running the Application
-
-To start the Flask application, run the following command:
-
-```bash
-    python3 app.py
-```
